@@ -39,4 +39,3 @@ with st.spinner('Predicting House Price'):
 st.success(msg)
 
 st.markdown('''**Design and Develop by: Amit Pratap Singh**''')
-
