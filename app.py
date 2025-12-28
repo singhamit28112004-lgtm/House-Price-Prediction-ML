@@ -7,7 +7,7 @@ from sklearn.datasets import fetch_california_housing
 from sklearn.ensemble import RandomForestRegressor
 st.title('🏠House Price prediction using ML')
 st.image('https://cdn.dribbble.com/userupload/23217976/file/original-203940eb89dec42ee25f6af662af24dc.gif')
-df = pd.read.csv('house_data_csv')
+df = pd.read_csv('house_data_csv')
 X = df.iloc[:,:-3]
 y = df.iloc[:,-1]
 
@@ -38,6 +38,7 @@ with st.spinner('Predicting House Price'):
  st.success(msg)
 
 st.markdown('''**Design And Developed by : Amit Pratap Singh**''')
+
 
 
 
