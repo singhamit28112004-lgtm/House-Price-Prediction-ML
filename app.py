@@ -37,7 +37,7 @@ with st.spinner('Predicting House Price'):
  msg = f'''House Price is ${house_price*100000}'''
  st.success(msg)
 
-st.markdown{'''**Design And Developed by : Amit Pratap Singh**''')
+st.markdown{'''**Design And Developed by : Amit Pratap Singh**'''}
 
 
 
