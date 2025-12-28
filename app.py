@@ -6,5 +6,17 @@ import time
 from sklearn.datasets import fetch_california_housing
 st.title('🏠House Price prediction using ML')
 st.image('https://cdn.dribbble.com/userupload/23217976/file/original-203940eb89dec42ee25f6af662af24dc.gif')
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+df = pd.read.csv('house_data_csv')
+X = df.iloc[:,-3:]
+y = df.iloc[:,-1]
+
+st.sidebar.title('Select House features')
+st.sidebar.image('https://cdn.dribbble.com/userupload/23217976/file/original-203940eb89dec42ee25f6af662af24dc.gif')
+all value = []
+for i in X:
+  
+ ans =  st.sidebar.slider(f'Select {i} value')
+ all_value.append(ans)
+
+st.write(all_value)
 
