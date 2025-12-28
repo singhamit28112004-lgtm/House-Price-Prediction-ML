@@ -16,11 +16,12 @@ all_value = []
 for i in X:
 
  min_value = int(X[i].min())
- max_value = int(Y[i].max())
+ max_value = int(y[i].max())
  ans =  st.sidebar.slider(f'Select {i} value', 'min_value','max_value')
  all_value.append(ans)
 
 # st.write(all_value)
+
 
 
 
