@@ -26,7 +26,7 @@ for i in X:
 scaler = StandardScaler()
 scaled_X = scaler.fit_transform(X)
 
-final_value = scaler/transform([all_value])
+final_value = scaler.transform([all_value])
 
 model = RandomForestRegressor()
 model.fit(X,y)
@@ -38,6 +38,7 @@ with st.spinner('Predicting House Price'):
  st.success(msg)
 
 st.markdown('''**Design And Developed by : Amit Pratap Singh**''')
+
 
 
 
