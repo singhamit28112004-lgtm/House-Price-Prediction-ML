@@ -38,4 +38,5 @@ with st.spinner('Predicting House Price'):
   msg = f'''House price is: $ {round(house_price*180500,2)}'''
 st.success(msg)
 
-st.markdown('''**Design and Develop by: Ankush Mishra**''')
+st.markdown('''**Design and Develop by: Amit Pratap Singh**''')
+
