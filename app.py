@@ -5,47 +5,37 @@ import pandas as pd
 import time
 from sklearn.datasets import fetch_california_housing
 from sklearn.ensemble import RandomForestRegressor
+
 st.title('🏠House Price prediction using ML')
-st.image('https://cdn.dribbble.com/userupload/23217976/file/original-203940eb89dec42ee25f6af662af24dc.gif')
-df = pd.read_csv('house_data_csv')
+st.image('https://i.pinimg.com/originals/f1/be/c8/f1bec81e20d80cd36c82379af920a4e9.gif')
+
+df = pd.read_csv('house_data.csv')
 X = df.iloc[:,:-3]
 y = df.iloc[:,-1]
 
 st.sidebar.title('Select House features')
-st.sidebar.image('https://cdn.dribbble.com/userupload/23217976/file/original-203940eb89dec42ee25f6af662af24dc.gif')
+st.sidebar.image('https://i.pinimg.com/originals/f1/be/c8/f1bec81e20d80cd36c82379af920a4e9.gif')
 all_value = []
 for i in X:
-
- min_value = int(X[i].min())
- max_value = int(y[i].max())
- ans =  st.sidebar.slider(f'Select {i} value', 'min_value','max_value')
- all_value.append(ans)
+  min_value = int(X[i].min())
+  max_value = int(X[i].max())
+  ans = st.sidebar.slider(f'Select {i} value',min_value, max_value)
+  all_value.append(ans)
 
 # st.write(all_value)
 
 scaler = StandardScaler()
 scaled_X = scaler.fit_transform(X)
-
 final_value = scaler.transform([all_value])
+
 
 model = st.cache(RandomForestRegressor)()
 model.fit(X,y)
-house_price = round(model.predict(final_value)[0])
+house_price = model.predict(final_value)[0]
 
 with st.spinner('Predicting House Price'):
- time.sleep(1)
- msg = f'''House Price is ${round(house_price*100000})'''
- st.success(msg)
+  time.sleep(1)
+  msg = f'''House price is: $ {round(house_price*180500,2)}'''
+st.success(msg)
 
-st.markdown('''**Design And Developed by : Amit Pratap Singh**''')
-
-
-
-
-
-
-
-
-
-
-
+st.markdown('''**Design and Develop by: Ankush Mishra**''')
